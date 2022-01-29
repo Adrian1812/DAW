@@ -23,5 +23,6 @@ namespace ProiectDAW.DAL.Repositories.DealerRepository
             return await _context.Dealers.Where(a => a.Name.Equals(name)).FirstOrDefaultAsync();
         }
 
+
     }
 }

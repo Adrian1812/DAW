@@ -11,6 +11,6 @@ namespace ProiectDAW.DAL.Repositories
     public interface IProductRepository : IGenericRepository<Product>
     {
         Task<Product> GetByName(string name);
-
+        Task<List<Product>> GetAllProductsOrderByDealer();
     }
 }
