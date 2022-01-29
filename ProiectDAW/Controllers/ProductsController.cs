@@ -33,6 +33,19 @@ namespace ProiectDAW.Controllers
             return Ok(Products);
         }
 
+        //read
+        [HttpGet("GetProdusOrderBy")]
+        public async Task<IActionResult> GetAllProducts()
+        {
+            var products = await _repository.GetAllProductsOrderByDealer();
+            var productsToReturn = new List<ProductDTO>();
+            foreach (var produs in products)
+            {
+                productsToReturn.Add(new ProductDTO(produs));
+            }
+            return Ok(productsToReturn);
+        }
+
         //create
         [HttpPost]
         public async Task<IActionResult> CreateProduct(ProductDTO dto)
